@@ -139,6 +139,19 @@
           "lib/netstandard2.0/Fable.MaterialUI.dll": {}
         }
       },
+      "Fable.MaterialUI.Icons/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Fable.Core": "3.0.0",
+          "Fable.React": "5.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.MaterialUI.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.MaterialUI.Icons.dll": {}
+        }
+      },
       "Fable.React/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -382,6 +395,22 @@
         "lib/netstandard2.0/Fable.MaterialUI.dll"
       ]
     },
+    "Fable.MaterialUI.Icons/1.1.0": {
+      "sha512": "HpiH9jq3X964NslsQ3UWF0LwRu22mrLJccGy+K/aYjzTClm8K0DC6ZwH4gvtraXzgUmTvoZYcTeLmYZkYQCjIg==",
+      "type": "package",
+      "path": "fable.materialui.icons/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.materialui.icons.1.1.0.nupkg.sha512",
+        "fable.materialui.icons.nuspec",
+        "fable/Fable.MaterialUI.Icons.fsproj",
+        "fable/Icons.fs",
+        "lib/netstandard2.0/Fable.MaterialUI.Icons.dll",
+        "lib/netstandard2.0/Fable.MaterialUI.Icons.pdb",
+        "lib/netstandard2.0/Fable.MaterialUI.Icons.xml"
+      ]
+    },
     "Fable.React/5.2.3": {
       "sha512": "BdsFAAzMGr8lW6gthEaZGINxPVAJBOGKakvr3AB+5YmCtp+J9mWM3PmGul35Tue3ZbU/FnY80FmRITuVVSA4bA==",
       "type": "package",
@@ -606,6 +635,7 @@
       "Fable.FontAwesome >= 2.0.0",
       "Fable.FontAwesome.Free >= 2.0.0",
       "Fable.MaterialUI >= 4.1.0",
+      "Fable.MaterialUI.Icons >= 1.1.0",
       "Fable.React >= 5.2.3",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -617,11 +647,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/askasp/git/fable2-samples/minimal/src/App.fsproj",
+      "projectUniqueName": "/home/askasp/git/dndgo-fable/src/App.fsproj",
       "projectName": "App",
-      "projectPath": "/home/askasp/git/fable2-samples/minimal/src/App.fsproj",
+      "projectPath": "/home/askasp/git/dndgo-fable/src/App.fsproj",
       "packagesPath": "/home/askasp/.nuget/packages/",
-      "outputPath": "/home/askasp/git/fable2-samples/minimal/src/obj/",
+      "outputPath": "/home/askasp/git/dndgo-fable/src/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -667,6 +697,10 @@
           "Fable.MaterialUI": {
             "target": "Package",
             "version": "[4.1.0, )"
+          },
+          "Fable.MaterialUI.Icons": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Fable.React": {
             "target": "Package",

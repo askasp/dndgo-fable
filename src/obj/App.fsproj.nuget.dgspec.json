@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/askasp/git/fable2-samples/minimal/src/App.fsproj": {}
+    "/home/askasp/git/dndgo-fable/src/App.fsproj": {}
   },
   "projects": {
-    "/home/askasp/git/fable2-samples/minimal/src/App.fsproj": {
+    "/home/askasp/git/dndgo-fable/src/App.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/askasp/git/fable2-samples/minimal/src/App.fsproj",
+        "projectUniqueName": "/home/askasp/git/dndgo-fable/src/App.fsproj",
         "projectName": "App",
-        "projectPath": "/home/askasp/git/fable2-samples/minimal/src/App.fsproj",
+        "projectPath": "/home/askasp/git/dndgo-fable/src/App.fsproj",
         "packagesPath": "/home/askasp/.nuget/packages/",
-        "outputPath": "/home/askasp/git/fable2-samples/minimal/src/obj/",
+        "outputPath": "/home/askasp/git/dndgo-fable/src/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -57,6 +57,10 @@
             "Fable.MaterialUI": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Fable.MaterialUI.Icons": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             },
             "Fable.React": {
               "target": "Package",

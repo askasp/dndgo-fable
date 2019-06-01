@@ -11,6 +11,7 @@
     <PackageReference Include="Fable.FontAwesome" Version="2.0.0" />
     <PackageReference Include="Fable.FontAwesome.Free" Version="2.0.0" />
     <PackageReference Include="Fable.MaterialUI" Version="4.1.0" />
+    <PackageReference Include="Fable.MaterialUI.Icons" Version="1.1.0" />
     <PackageReference Include="Fable.React" Version="5.2.3" />
   </ItemGroup>
 </Project>
