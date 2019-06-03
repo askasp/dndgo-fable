@@ -1,0 +1,40 @@
+
+
+.inputRoot {
+    color: rgba(255,255,255,0.67);
+}
+
+.inputInput {
+    transition: max-width 0.8s ease-in-out;
+    max-width: 140px;
+    width:auto;
+    padding: 8px 8px 8px 32px;
+    text-align: center;
+}
+.inputInput:focus{
+    max-width:220px;
+    color: rgba(255,255,255,0.67);
+}
+.search {
+    position: relative;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-left: 8px;
+    width: auto;
+}
+
+.search:hover {
+    background-color: rgba(255,255,255,0.25)
+}
+
+
+.searchIcon {
+    width: 56px;
+    height: 100%;
+    position: absolute;
+    margin-right: 8px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

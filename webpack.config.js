@@ -4,9 +4,15 @@
 
 var path = require("path");
 
+//var t = require("./src/App.css");
+
+
 module.exports = {
     mode: "development",
-    entry: "./src/App.fsproj",
+    entry: ["./src/App.fsproj","./src/App.css"],
+//entry:{
+    //app: ["./src/App.fsproj"]
+//},
     output: {
         path: path.join(__dirname, "./public"),
         filename: "bundle.js",
@@ -19,6 +25,15 @@ module.exports = {
         rules: [{
             test: /\.fs(x|proj)?$/,
             use: "fable-loader"
-        }]
+        },
+ {
+				test: /\.(sass|scss|css)$/,
+				use: [
+				    'style-loader',
+					'css-loader',
+					'sass-loader',
+				],
+			},
+        ]
     }
 }
