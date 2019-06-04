@@ -1,11 +1,25 @@
 
+:root {
+    --prim :#ffab91
+}
+
+.fab {
+    margin: 8px;
+    background-color: white;
+    color: black;
+}
+.card{
+    background-color:#1e1e1e;
+    margin:10%;
+    margin-top:50%;
+}
 
 .inputRoot {
     color: rgba(255,255,255,0.67);
 }
 
 .inputInput {
-    transition: max-width 0.8s ease-in-out;
+    transition: max-width 0.3s ease-in-out;
     max-width: 140px;
     width:auto;
     padding: 8px 8px 8px 32px;
@@ -26,6 +40,7 @@
 .search:hover {
     background-color: rgba(255,255,255,0.25)
 }
+
 
 
 .searchIcon {

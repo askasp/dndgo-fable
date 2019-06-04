@@ -22,18 +22,50 @@ open Fable.MaterialUI.Themes
 
 module MyIcon = Fable.MaterialUI.Icons
 
-// MODEL
-
+//STYLES
 let primaryString = "rgba(255,255,255,0.87)"
 let secondaryString = "rgba(255,255,255,0.60)"
-let primaryColor = "#ffab91"
+//let primaryColor = "#ffab91"
+let primaryColor = "#03dac5"
+let cardContentStyle = Style[BackgroundColor "#1e1e1e"]
+let fabStyle =Style[
+    BackgroundColor primaryColor
+    unbox("margin","8px")
+    unbox("color","black")
+]
+let gridContainerStyle =
+        GridProp.Container true
+        GridProp.Spacing  GridSpacing.``0``
+        GridProp.Justify GridJustify.Center
+        Style [MinHeight "100vh"
+               ]
+        
+let gridItemStyle=
+          GridProp.Item true
+          GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
+          GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3)
+                
+let mainStyle = 
+        Style [BackgroundColor "#121212"
+               FlexGrow 1
+               MinHeight "100vh"
+               unbox("fontFamily","Roboto")
+               unbox("width","100vw")
+               unbox("position","absolute")
+               unbox("left","0")
+               unbox("top","0")
+               unbox("overflow","auto")
+               
+               ]
 
-
+///
+/// MODEL
 
 type Page  = Home | CreateCharacter | Character
                
 type Model = {collapse:string;ActivePage:Page}
 type Msg = Toggle of string
+           |SetPage of Page
 
 let init() : Model = {collapse= "";ActivePage=Home}
 
@@ -41,13 +73,35 @@ let init() : Model = {collapse= "";ActivePage=Home}
 
 let update (msg:Msg) (model:Model)  =
     match msg with
+    |SetPage apage -> {model with ActivePage = apage}
     |Toggle result when model.collapse =result -> {model with collapse = ""}
     |Toggle result ->  {model with collapse = result}
     | _ ->  {model with collapse=""}
 
 // VIEW (rendered with React)
 
-    
+let homePage (model:Model) dispatch=
+    Mui.card[ClassName "card"
+             Style[unbox("text-align","center")]][
+                Mui.cardContent[cardContentStyle][
+                Mui.typography[TypographyProp.Variant TypographyVariant.H5
+                               Style[unbox("color",primaryString)]
+                               ][str "DnDGo"]
+                Mui.typography[TypographyProp.Variant TypographyVariant.Body1
+                               Style[unbox("color",primaryString)]][str "Import an existing character from the burger menu or..."]
+                ]
+                div[Style[BackgroundColor "#1e1e1e"]][
+                Mui.fab[fabStyle
+                        FabProp.Variant FabVariant.Extended
+                        OnClick  ( fun _ -> Character|> SetPage |>dispatch)
+                        ][
+                         Fa.i[Fa.Solid.Plus][]
+                         str "Create new"
+                ]
+                ]
+    ]
+        
+
 let MyDivider =
     hr[Style[Opacity 0.05]]
 
@@ -122,18 +176,10 @@ let mylistSubHeader (title:string) =
                           unbox ("textAlign", "center")
                       ]][str title]
 
-let cardview (model:Model) dispatch =
-    Mui.grid[
-        GridProp.Container true
-        GridProp.Spacing  GridSpacing.``0``
-        GridProp.Justify GridJustify.Center
-        Style [MinHeight "100vh"
-               ]
-    ] [
-        Mui.grid[ GridProp.Item true
-                  GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
-                  GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3)]
-                
+
+let characterPage (model:Model) dispatch =
+    Mui.grid[gridContainerStyle][
+        Mui.grid[gridItemStyle]
                 [Mui.list[
                 MaterialProp.Component ("nav" |>ReactElementType.ofHtmlElement)
                 Style [Width "100%"
@@ -152,10 +198,7 @@ let cardview (model:Model) dispatch =
                  ]
               ]
         ]
-        Mui.grid[ GridProp.Item true
-                  GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
-                  GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3) 
-    ]    [
+        Mui.grid[ gridItemStyle][
             Mui.list[
                 MaterialProp.Component ("nav" |>ReactElementType.ofHtmlElement)
                 Style [Width "100%"
@@ -170,24 +213,30 @@ let cardview (model:Model) dispatch =
                     myListItem model "Ac11" Fa.Solid.Book "WIS: 5" (str "hei") dispatch
                     myListItem model "Ac12" Fa.Solid.LaughBeam "CHA: 4" (str "hei") dispatch
                     ]
-                    
                 ]
                 ]
-            
         ]
         ]
+    
+let createCharacterPage =
+     Mui.grid[gridContainerStyle][
+         Mui.grid[gridItemStyle][
+             Mui.textField[
+                 MaterialProp.Label (str "Name")
+             ][
+                 
+             ]
+         ]
+     ]
+    
+    
+ 
+    
         
-let mainStyle = 
-        Style [BackgroundColor "#121212"
-               FlexGrow 1
-               unbox("fontFamily","Roboto")
-               unbox("width","100vw")
-               unbox("position","absolute")
-               unbox("left","0")
-               unbox("top","0")
-               unbox("overflow","auto")
-               
-               ]
+let currentPageView (model:Model) dispatch =
+    match model.ActivePage with
+    |Home -> homePage model dispatch
+    |Character -> characterPage model dispatch
 
 let view (model:Model) dispatch =
 
@@ -196,10 +245,13 @@ let view (model:Model) dispatch =
       [
         myAppBar model dispatch
         div[Style[unbox("padding","16px")]][
-        cardview model dispatch]
+         createCharacterPage
+         currentPageView model dispatch
+        ]
+//        cardview model dispatch]
 ]
-     
 
+     
 // App
 Program.mkSimple init update view
 |> Program.withReact "elmish-app"
