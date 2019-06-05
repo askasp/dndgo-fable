@@ -14,15 +14,42 @@ open Fable.Core
 open Fable.MaterialUI.Props
 open Fable.FontAwesome
 open Fable.MaterialUI
-open Fable.MaterialUI.Props
-open Fable.MaterialUI.Props
-open Fable.MaterialUI.Props
+open Fable.Core.JsInterop
 open Fable.MaterialUI.Themes
-open Fable.MaterialUI.Themes
+open Fable.MaterialUI.Core
+open Fable.MaterialUI.Props
+open Fable.MaterialUI.Props
+open Fable.MaterialUI.Props
 
 module MyIcon = Fable.MaterialUI.Icons
 
 //STYLES
+let toObj props = keyValueList CaseRules.LowerFirst props
+let styles (theme : ITheme) : IStyles list =
+    [
+        Styles.Container [
+            CSSProp.Display DisplayOptions.Flex
+            CSSProp.FlexWrap "wrap"
+        ]
+        Styles.Custom ("margin", [
+            CSSProp.Margin theme.spacing.unit
+        ])
+        Styles.Custom ("cssLabel", [
+            CSSProp.Custom ("&$cssFocused",
+                [
+                    CSSProp.Color Colors.purple.``500``
+                ] |> toObj)
+        ])
+        Styles.Custom ("cssFocused", [])
+        Styles.Custom ("cssUnderline", [
+            CSSProp.Custom ("&:after", [
+                CSSProp.BorderBottomColor Colors.purple.``500``
+            ] |> toObj)
+        ])
+        ]
+        
+    
+        
 let primaryString = "rgba(255,255,255,0.87)"
 let secondaryString = "rgba(255,255,255,0.60)"
 //let primaryColor = "#ffab91"
@@ -101,7 +128,6 @@ let homePage (model:Model) dispatch=
                 ]
     ]
         
-
 let MyDivider =
     hr[Style[Opacity 0.05]]
 
@@ -221,13 +247,20 @@ let characterPage (model:Model) dispatch =
 let createCharacterPage =
      Mui.grid[gridContainerStyle][
          Mui.grid[gridItemStyle][
-             Mui.textField[
-                 MaterialProp.Label (str "Name")
-             ][
-                 
+             Mui.card[][
+                 Mui.cardContent[cardContentStyle]
+             [
+                 Mui.textField[
+                     MaterialProp.Label (str "Name")
+                     InputLabelProps[
+                         MaterialProp.Classes[
+                         ClassNames.Root "inputLabelRoot"
+                         ClassNames.Focused "inputLabelRoot"
+                         ]]][]
              ]
          ]
      ]
+         ]
     
     
  
@@ -245,7 +278,7 @@ let view (model:Model) dispatch =
       [
         myAppBar model dispatch
         div[Style[unbox("padding","16px")]][
-         createCharacterPage
+         createCharacterPage 
          currentPageView model dispatch
         ]
 //        cardview model dispatch]

@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj",
+    "projectUniqueName": "/home/askasp/git/dndgo-fable/src/App.fsproj",
     "projectName": "App",
-    "projectPath": "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj",
-    "outputPath": "/home/akselkjetsa/git/dndgo-fable/src/obj/",
+    "projectPath": "/home/askasp/git/dndgo-fable/src/App.fsproj",
+    "outputPath": "/home/askasp/git/dndgo-fable/src/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"

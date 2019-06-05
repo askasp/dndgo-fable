@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj": {}
+    "/home/askasp/git/dndgo-fable/src/App.fsproj": {}
   },
   "projects": {
-    "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj": {
+    "/home/askasp/git/dndgo-fable/src/App.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj",
+        "projectUniqueName": "/home/askasp/git/dndgo-fable/src/App.fsproj",
         "projectName": "App",
-        "projectPath": "/home/akselkjetsa/git/dndgo-fable/src/App.fsproj",
-        "packagesPath": "/home/akselkjetsa/.nuget/packages/",
-        "outputPath": "/home/akselkjetsa/git/dndgo-fable/src/obj/",
+        "projectPath": "/home/askasp/git/dndgo-fable/src/App.fsproj",
+        "packagesPath": "/home/askasp/.nuget/packages/",
+        "outputPath": "/home/askasp/git/dndgo-fable/src/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/akselkjetsa/.nuget/NuGet/NuGet.Config"
+          "/home/askasp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
