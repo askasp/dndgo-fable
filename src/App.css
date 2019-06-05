@@ -25,13 +25,14 @@
 
 .inputRoot {
     color: rgba(255,255,255,0.67);
+    width:100%
 }
 
 textarea:focus,input:focus{
-    color:rgba(255,255,255,0.80)
+    color:rgba(255,255,255,0.80);
 }
 textarea:not(:focus),input:not(:focus){
-    color:rgba(255,255,255,0.80)
+    color:rgba(255,255,255,0.80);
 }
 .inputInput {
     transition: max-width 0.3s ease-in-out;

@@ -257,6 +257,19 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Thoth.Json/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "Fable.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Thoth.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Thoth.Json.dll": {}
+        }
       }
     }
   },
@@ -657,6 +670,25 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Thoth.Json/3.2.0": {
+      "sha512": "uGMrOXbK0iCDikUlFi6pUs8ATDQamz4rPAAefbKe/yAmzcJ3pv5I7zmLTB5vsCTGF74qiAQkAnDY55wCEgZwWA==",
+      "type": "package",
+      "path": "thoth.json/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable/Decode.fs",
+        "fable/Encode.fs",
+        "fable/Extra.fs",
+        "fable/Thoth.Json.fsproj",
+        "fable/Types.fs",
+        "fable/obj/Debug/netstandard2.0/Thoth.Json.AssemblyInfo.fs",
+        "lib/netstandard2.0/Thoth.Json.dll",
+        "lib/netstandard2.0/Thoth.Json.xml",
+        "thoth.json.3.2.0.nupkg.sha512",
+        "thoth.json.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -670,7 +702,8 @@
       "Fable.MaterialUI >= 4.1.0",
       "Fable.MaterialUI.Icons >= 1.1.0",
       "Fable.React >= 5.2.3",
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Thoth.Json >= 3.2.0"
     ]
   },
   "packageFolders": {
@@ -748,6 +781,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Thoth.Json": {
+            "target": "Package",
+            "version": "[3.2.0, )"
           }
         },
         "imports": [

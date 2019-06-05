@@ -14,8 +14,10 @@
     <PackageReference Include="Fable.MaterialUI" Version="4.1.0" />
     <PackageReference Include="Fable.MaterialUI.Icons" Version="1.1.0" />
     <PackageReference Include="Fable.React" Version="5.2.3" />
+    <PackageReference Include="Thoth.Json" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.css" />
+    <Content Include="dnd5eDB\5e-SRD-Classes.json" />
   </ItemGroup>
 </Project>

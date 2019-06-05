@@ -1,3 +1,4 @@
+
 module App
 
 (**
@@ -11,17 +12,45 @@ open Fable.React
 open Fable.React.Props
 module Mui = Fable.MaterialUI.Core
 open Fable.Core
+open Fable.Core
+open Fable.Core
+open Fable.Core
+open Fable.Core
 open Fable.MaterialUI.Props
 open Fable.FontAwesome
 open Fable.MaterialUI
-open Fable.Core.JsInterop
 open Fable.MaterialUI.Themes
 open Fable.MaterialUI.Core
 open Fable.MaterialUI.Props
 open Fable.MaterialUI.Props
 open Fable.MaterialUI.Props
+open Fable.MaterialUI.Props
+open Fable.Core.JsInterop
+open Thoth.Json
+
+//JsInterop.import("./src/dnd5eDB/5e-SRD-Races.json")
+//JsInterop.importjjh
+type Samma =
+    {jada :string}
 
 module MyIcon = Fable.MaterialUI.Icons
+let races = JsInterop.toPlainJsObj (JsInterop.import "*" "./dnd5eDB/5e-SRD-Races.json")
+printfn "hei"
+//Decode.Auto.unsafeFromString<Samma>(races)
+//System.Console.WriteLine(races?("default"))
+let a = JsInterop.toPlainJsObj races?("default")
+System.Console.WriteLine(a)
+let b = JsInterop.toPlainJsObj a?("0")
+System.Console.WriteLine(b)
+
+printfn "Value: %O" b?("name") // Access with a string reference
+let currencies = [
+    ("$", "USD")
+    ("€", "EUR")
+    ("฿", "BTC")
+    ("¥", "JPY")
+]
+
 
 //STYLES
 let toObj props = keyValueList CaseRules.LowerFirst props
@@ -71,6 +100,10 @@ let gridItemStyle=
           GridProp.Item true
           GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
           GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3)
+          
+let gridItemTwoColumn=
+          GridProp.Item true
+          GridProp.Xs (GridSizeNum.``4`` |> GridSize.Case3) 
                 
 let mainStyle = 
         Style [BackgroundColor "#121212"
@@ -249,14 +282,31 @@ let createCharacterPage =
          Mui.grid[gridItemStyle][
              Mui.card[][
                  Mui.cardContent[cardContentStyle]
-             [
+                [
+                 mylistSubHeader "Basics"
+                 Mui.grid[gridItemStyle][
+                     Mui.textField[
+                         MaterialProp.Label (str "Name")
+                         Style[Width "100%"]
+                         InputLabelProps[
+                             MaterialProp.Classes[
+                             ClassNames.Root "inputLabelRoot"
+                             ClassNames.Focused "inputLabelRoot"
+                             ]]][]
+                     ]
+                 Mui.grid[gridItemStyle]
+                [
                  Mui.textField[
-                     MaterialProp.Label (str "Name")
+                     Style[Width "100%"
+                           ]
+                     MaterialProp.Label (str "Race")
+                     TextFieldProp.Select true
                      InputLabelProps[
                          MaterialProp.Classes[
                          ClassNames.Root "inputLabelRoot"
                          ClassNames.Focused "inputLabelRoot"
-                         ]]][]
+                         ]]](currencies |> List.map (fun (k,v) -> menuItem [ Prop.Key v; HTMLAttr.Value v ] [ str k ]))
+                 ]
              ]
          ]
      ]
