@@ -28,6 +28,10 @@
           "target": "Package",
           "version": "[4.5.2, )"
         },
+        "FSharp.Data": {
+          "target": "Package",
+          "version": "[3.1.1, )"
+        },
         "Fable.Core": {
           "target": "Package",
           "version": "[3.0.0, )"
@@ -56,9 +60,17 @@
           "target": "Package",
           "version": "[1.1.0, )"
         },
+        "Fable.PowerPack": {
+          "target": "Package",
+          "version": "[3.0.0, )"
+        },
         "Fable.React": {
           "target": "Package",
           "version": "[5.2.3, )"
+        },
+        "Fable.SimpleJson": {
+          "target": "Package",
+          "version": "[3.1.1-beta, )"
         },
         "NETStandard.Library": {
           "suppressParent": "All",

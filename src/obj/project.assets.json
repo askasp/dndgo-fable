@@ -140,6 +140,18 @@
           "lib/netstandard2.0/Fable.FontAwesome.Free.dll": {}
         }
       },
+      "Fable.Import.Browser/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Fable.Core": "1.3.17"
+        },
+        "compile": {
+          "lib/netstandard1.6/Fable.Import.Browser.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Fable.Import.Browser.dll": {}
+        }
+      },
       "Fable.MaterialUI/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -167,6 +179,34 @@
           "lib/netstandard2.0/Fable.MaterialUI.Icons.dll": {}
         }
       },
+      "Fable.Parsimmon/4.0.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "Fable.Core": "3.0.0-beta-002"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.Parsimmon.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.Parsimmon.dll": {}
+        }
+      },
+      "Fable.PowerPack/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "Fable.Core": "2.0.0",
+          "Fable.Import.Browser": "1.3.0",
+          "Thoth.Json": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.PowerPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.PowerPack.dll": {}
+        }
+      },
       "Fable.React/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -179,6 +219,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/Fable.React.dll": {}
+        }
+      },
+      "Fable.SimpleJson/3.1.1-beta": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "Fable.Core": "3.0.0-beta-005",
+          "Fable.Parsimmon": "4.0.0-beta"
+        },
+        "compile": {
+          "lib/netstandard2.0/Fable.SimpleJson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Fable.SimpleJson.dll": {}
         }
       },
       "FSharp.Core/4.5.2": {
@@ -232,6 +286,18 @@
           "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "FSharp.Data/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.3.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/FSharp.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FSharp.Data.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -425,6 +491,19 @@
         "lib/netstandard2.0/Fable.FontAwesome.Free.xml"
       ]
     },
+    "Fable.Import.Browser/1.3.0": {
+      "sha512": "4Uw10qcWwkDPHxY97zGsoDIJ6CpOnHbBYQ2zNb+qMzEjTuWW5S1kcdy1Aj9xqf/SylhyqBwu9voNKTsNbI0XYQ==",
+      "type": "package",
+      "path": "fable.import.browser/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.import.browser.1.3.0.nupkg.sha512",
+        "fable.import.browser.nuspec",
+        "lib/netstandard1.6/Fable.Import.Browser.dll",
+        "lib/netstandard1.6/Fable.Import.Browser.xml"
+      ]
+    },
     "Fable.MaterialUI/4.1.0": {
       "sha512": "K4FUcd3jbQUoEIJLOQlbzderQm7nIAI2bzm7BnZDl7S+G3jmP+nSk0g3drZ6vkO1ipKHEBl9fnaVC4zTF9NhVg==",
       "type": "package",
@@ -456,6 +535,47 @@
         "lib/netstandard2.0/Fable.MaterialUI.Icons.xml"
       ]
     },
+    "Fable.Parsimmon/4.0.0-beta": {
+      "sha512": "vVTGJV0MXtPobA+MXFa85Cto+QQj04ettGe4Bqw72tRT5gDjyNMYYuITKJGmIq5HfdAE8ustlqSih6PTfIO20w==",
+      "type": "package",
+      "path": "fable.parsimmon/4.0.0-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.parsimmon.4.0.0-beta.nupkg.sha512",
+        "fable.parsimmon.nuspec",
+        "fable/Fable.Parsimmon.fsproj",
+        "fable/Parsimmon.fs",
+        "fable/Parsimmon.js",
+        "lib/netstandard2.0/Fable.Parsimmon.dll",
+        "lib/netstandard2.0/Fable.Parsimmon.xml"
+      ]
+    },
+    "Fable.PowerPack/3.0.0": {
+      "sha512": "rDrkOKFzVlB++eHiKVJgSV6o0oEhSf8QP2opVcbJWs25LYjZhiNwb9rj/oieJtMCYpCTuu7KMNTWqu/dmutCJA==",
+      "type": "package",
+      "path": "fable.powerpack/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.powerpack.3.0.0.nupkg.sha512",
+        "fable.powerpack.nuspec",
+        "fable/BrowserStorage.fs",
+        "fable/Fable.PowerPack.fsproj",
+        "fable/Fetch.fs",
+        "fable/Keyboard.fs",
+        "fable/Promise.fs",
+        "fable/Result.fs",
+        "fable/extra/Date/Format.fs",
+        "fable/extra/Date/Local.fs",
+        "fable/extra/IndexedDB.fs",
+        "fable/extra/PromiseSeq/Extensions.fs",
+        "fable/extra/PromiseSeq/Module.fs",
+        "fable/extra/PromiseSeq/Type.fs",
+        "lib/netstandard2.0/Fable.PowerPack.dll",
+        "lib/netstandard2.0/Fable.PowerPack.xml"
+      ]
+    },
     "Fable.React/5.2.3": {
       "sha512": "BdsFAAzMGr8lW6gthEaZGINxPVAJBOGKakvr3AB+5YmCtp+J9mWM3PmGul35Tue3ZbU/FnY80FmRITuVVSA4bA==",
       "type": "package",
@@ -479,6 +599,27 @@
         "fable/Fable.ReactServer.fs",
         "lib/netstandard2.0/Fable.React.dll",
         "lib/netstandard2.0/Fable.React.xml"
+      ]
+    },
+    "Fable.SimpleJson/3.1.1-beta": {
+      "sha512": "PFejzB6xB1QNlFNQqeqC3aAmYjuRPK4Z+ZoDxe1tw94cF+rn2yZq4kbwveBrLNmP1KtVcufUfhR/bjuUNbkV/w==",
+      "type": "package",
+      "path": "fable.simplejson/3.1.1-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fable.simplejson.3.1.1-beta.nupkg.sha512",
+        "fable.simplejson.nuspec",
+        "fable/Fable.SimpleJson.fsproj",
+        "fable/Json.Converter.fs",
+        "fable/Json.fs",
+        "fable/Parser.fs",
+        "fable/SimpleJson.fs",
+        "fable/TypeCheck.fs",
+        "fable/TypeInfo.Converter.fs",
+        "fable/TypeInfo.fs",
+        "lib/netstandard2.0/Fable.SimpleJson.dll",
+        "lib/netstandard2.0/Fable.SimpleJson.xml"
       ]
     },
     "FSharp.Core/4.5.2": {
@@ -527,6 +668,34 @@
         "lib/netstandard1.6/tr/FSharp.Core.resources.dll",
         "lib/netstandard1.6/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "FSharp.Data/3.1.1": {
+      "sha512": "jpqpskdcNYa+px1YaxCY5QQcnnVR9HArf2ocuHluhHg/zAjNP+G768y0BfgDePatPK35G+ZHChnB9M67J3kynw==",
+      "type": "package",
+      "path": "fsharp.data/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fsharp.data.3.1.1.nupkg.sha512",
+        "fsharp.data.nuspec",
+        "lib/net45/FSharp.Data.DesignTime.dll",
+        "lib/net45/FSharp.Data.DesignTime.pdb",
+        "lib/net45/FSharp.Data.dll",
+        "lib/net45/FSharp.Data.pdb",
+        "lib/net45/FSharp.Data.xml",
+        "lib/netstandard2.0/FSharp.Data.DesignTime.dll",
+        "lib/netstandard2.0/FSharp.Data.DesignTime.pdb",
+        "lib/netstandard2.0/FSharp.Data.dll",
+        "lib/netstandard2.0/FSharp.Data.pdb",
+        "lib/netstandard2.0/FSharp.Data.xml",
+        "linqpad-samples/GitHub.linq",
+        "linqpad-samples/Jira.linq",
+        "linqpad-samples/TypeInference.linq",
+        "typeproviders/fsharp41/net45/FSharp.Data.DesignTime.dll",
+        "typeproviders/fsharp41/net45/FSharp.Data.DesignTime.pdb",
+        "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.dll",
+        "typeproviders/fsharp41/netstandard2.0/FSharp.Data.DesignTime.pdb"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
@@ -695,6 +864,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "FSharp.Core >= 4.5.2",
+      "FSharp.Data >= 3.1.1",
       "Fable.Core >= 3.0.0",
       "Fable.Elmish.Browser >= 3.0.0",
       "Fable.Elmish.React >= 3.0.1",
@@ -702,7 +872,9 @@
       "Fable.FontAwesome.Free >= 2.0.0",
       "Fable.MaterialUI >= 4.1.0",
       "Fable.MaterialUI.Icons >= 1.1.0",
+      "Fable.PowerPack >= 3.0.0",
       "Fable.React >= 5.2.3",
+      "Fable.SimpleJson >= 3.1.1-beta",
       "NETStandard.Library >= 2.0.3",
       "Thoth.Json >= 3.2.0"
     ]
@@ -725,7 +897,7 @@
       ],
       "configFilePaths": [
         "/Users/akselkjetsa/git/dndgo-fable/NuGet.Config",
-        "/Users/akselkjetsa/.nuget/NuGet/NuGet.Config"
+        "/Users/akselkjetsa/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -745,6 +917,10 @@
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.5.2, )"
+          },
+          "FSharp.Data": {
+            "target": "Package",
+            "version": "[3.1.1, )"
           },
           "Fable.Core": {
             "target": "Package",
@@ -774,9 +950,17 @@
             "target": "Package",
             "version": "[1.1.0, )"
           },
+          "Fable.PowerPack": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Fable.React": {
             "target": "Package",
             "version": "[5.2.3, )"
+          },
+          "Fable.SimpleJson": {
+            "target": "Package",
+            "version": "[3.1.1-beta, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
@@ -823,6 +1007,16 @@
       "level": "Warning",
       "warningLevel": 1,
       "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Fable.React 5.2.3 -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Fable.SimpleJson 3.1.1-beta -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
       "libraryId": "FSharp.Core",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"

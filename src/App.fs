@@ -12,44 +12,29 @@ open Fable.React
 open Fable.React.Props
 module Mui = Fable.MaterialUI.Core
 open Fable.Core
-open Fable.Core
-open Fable.Core
-open Fable.Core
-open Fable.Core
 open Fable.MaterialUI.Props
 open Fable.FontAwesome
 open Fable.MaterialUI
-open Fable.MaterialUI.Themes
 open Fable.MaterialUI.Core
-open Fable.MaterialUI.Props
-open Fable.MaterialUI.Props
-open Fable.MaterialUI.Props
-open Fable.MaterialUI.Props
 open Fable.Core.JsInterop
+open Fable.PowerPack
+open Fable.SimpleJson
 open Thoth.Json
+open System
+open Types
 
-//JsInterop.import("./src/dnd5eDB/5e-SRD-Races.json")
-//JsInterop.importjjh
-//ype Samma =
-//   {jada :string}
-//
-//odule MyIcon = Fable.MaterialUI.Icons
-//et races = JsInterop.toPlainJsObj (JsInterop.import "*" "./dnd5eDB/5e-SRD-Races.json")
-//rintfn "hei"
-///Decode.Auto.unsafeFromString<Samma>(races)
-///System.Console.WriteLine(races?("default"))
-//et a = JsInterop.toPlainJsObj races?("default")
-//ystem.Console.WriteLine(a)
-//et b = JsInterop.toPlainJsObj a?("0")
-//ystem.Console.WriteLine(b)
-//
-//rintfn "Value: %O" b?("name") // Access with a string reference
+
+let races =
+    Types.Classes
+    |> List.map (fun x -> (x.name,x))
+
 let currencies = [
     ("$", "USD")
     ("€", "EUR")
     ("฿", "BTC")
     ("¥", "JPY")
 ]
+
 
 
 //STYLES
@@ -89,21 +74,22 @@ let fabStyle =Style[
     unbox("margin","8px")
     unbox("color","black")
 ]
-let gridContainerStyle =
+let gridContainerStyle=
         GridProp.Container true
         GridProp.Spacing  GridSpacing.``0``
         GridProp.Justify GridJustify.Center
-        Style [MinHeight "100vh"
-               ]
+        
         
 let gridItemStyle=
           GridProp.Item true
           GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
           GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3)
           
+          
 let gridItemTwoColumn=
           GridProp.Item true
-          GridProp.Xs (GridSizeNum.``4`` |> GridSize.Case3) 
+          GridProp.Xs (GridSizeNum.``4`` |> GridSize.Case3)
+          
                 
 let mainStyle = 
         Style [BackgroundColor "#121212"
@@ -237,7 +223,7 @@ let mylistSubHeader (title:string) =
 
 
 let characterPage (model:Model) dispatch =
-    Mui.grid[gridContainerStyle][
+    Mui.grid [gridContainerStyle] [
         Mui.grid[gridItemStyle]
                 [Mui.list[
                 MaterialProp.Component ("nav" |>ReactElementType.ofHtmlElement)
@@ -278,8 +264,16 @@ let characterPage (model:Model) dispatch =
         ]
     
 let createCharacterPage =
-     Mui.grid[gridContainerStyle][
-         Mui.grid[gridItemStyle][
+     Mui.grid[
+        GridProp.Container true
+        GridProp.Spacing  GridSpacing.``0``
+        GridProp.Justify GridJustify.Center
+     ][
+         Mui.grid[
+          GridProp.Item true
+          GridProp.Xs (GridSizeNum.``12`` |> GridSize.Case3) 
+          GridProp.Md (GridSizeNum.``4`` |> GridSize.Case3)]
+             [
              Mui.card[][
                  Mui.cardContent[cardContentStyle]
                 [
@@ -305,24 +299,19 @@ let createCharacterPage =
                          MaterialProp.Classes[
                          ClassNames.Root "inputLabelRoot"
                          ClassNames.Focused "inputLabelRoot"
-                         ]]](currencies |> List.map (fun (k,v) -> menuItem [ Prop.Key v; HTMLAttr.Value v ] [ str k ]))
+                         ]]](races |> List.map (fun (k,v) -> menuItem [ Prop.Key k; HTMLAttr.Value v ] [ str k ]))
                  ]
              ]
          ]
      ]
          ]
     
-    
- 
-    
-        
 let currentPageView (model:Model) dispatch =
     match model.ActivePage with
     |Home -> homePage model dispatch
-    |Character -> characterPage model dispatch
+    |Character -> createCharacterPage
 
 let view (model:Model) dispatch =
-
   div [mainStyle
       ]
       [

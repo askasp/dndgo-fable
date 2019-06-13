@@ -3,6 +3,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="jsonStrings.fs" />
+    <Compile Include="CompoundTypes.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
@@ -13,11 +15,47 @@
     <PackageReference Include="Fable.FontAwesome.Free" Version="2.0.0" />
     <PackageReference Include="Fable.MaterialUI" Version="4.1.0" />
     <PackageReference Include="Fable.MaterialUI.Icons" Version="1.1.0" />
+    <PackageReference Include="Fable.PowerPack" Version="3.0.0" />
     <PackageReference Include="Fable.React" Version="5.2.3" />
+    <PackageReference Include="Fable.SimpleJson" Version="3.1.1-beta" />
+    <PackageReference Include="FSharp.Data" Version="3.1.1" />
     <PackageReference Include="Thoth.Json" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="5e-database-master\.gitignore" />
+    <Content Include="5e-database-master\5e-SRD-Ability-Scores.json" />
+    <Content Include="5e-database-master\5e-SRD-Classes.json" />
+    <Content Include="5e-database-master\5e-SRD-Conditions.json" />
+    <Content Include="5e-database-master\5e-SRD-Damage-Types.json" />
+    <Content Include="5e-database-master\5e-SRD-Equipment-Categories.json" />
+    <Content Include="5e-database-master\5e-SRD-Equipment.json" />
+    <Content Include="5e-database-master\5e-SRD-Features.json" />
+    <Content Include="5e-database-master\5e-SRD-Languages.json" />
+    <Content Include="5e-database-master\5e-SRD-Levels.json" />
+    <Content Include="5e-database-master\5e-SRD-Magic-Schools.json" />
+    <Content Include="5e-database-master\5e-SRD-Monsters.json" />
+    <Content Include="5e-database-master\5e-SRD-Proficiencies.json" />
+    <Content Include="5e-database-master\5e-SRD-Races.json" />
+    <Content Include="5e-database-master\5e-SRD-Skills.json" />
+    <Content Include="5e-database-master\5e-SRD-Spellcasting.json" />
+    <Content Include="5e-database-master\5e-SRD-Spells.json" />
+    <Content Include="5e-database-master\5e-SRD-StartingEquipment.json" />
+    <Content Include="5e-database-master\5e-SRD-Subclasses.json" />
+    <Content Include="5e-database-master\5e-SRD-Subraces.json" />
+    <Content Include="5e-database-master\5e-SRD-Test.json" />
+    <Content Include="5e-database-master\5e-SRD-Traits.json" />
+    <Content Include="5e-database-master\5e-SRD-Weapon-Properties.json" />
+    <Content Include="5e-database-master\addsubclasses.js" />
+    <Content Include="5e-database-master\fill-in-features.js" />
+    <Content Include="5e-database-master\helper.js" />
+    <Content Include="5e-database-master\mit.md" />
+    <Content Include="5e-database-master\namer.js" />
+    <Content Include="5e-database-master\objectifier.js" />
+    <Content Include="5e-database-master\printname.js" />
+    <Content Include="5e-database-master\README.md" />
+    <Content Include="5e-database-master\spellchecking.txt" />
+    <Content Include="5e-database-master\updatefeaturechoices.js" />
+    <Content Include="5e-database-master\updateurl.js" />
     <Content Include="App.css" />
-    <Content Include="dnd5eDB\5e-SRD-Classes.json" />
   </ItemGroup>
 </Project>
