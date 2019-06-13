@@ -123,11 +123,12 @@ let mainStyle =
 
 type Page  = Home | CreateCharacter | Character
                
-type Model = {collapse:string;ActivePage:Page}
+type Model = {collapse:string;ActivePage:Page;ShowBurger:Boolean}
 type Msg = Toggle of string
            |SetPage of Page
+           |ToggleBurger
 
-let init() : Model = {collapse= "";ActivePage=Home}
+let init() : Model = {collapse= "";ActivePage=Home;ShowBurger=false}
 
 // UPDATE
 
@@ -136,6 +137,7 @@ let update (msg:Msg) (model:Model)  =
     |SetPage apage -> {model with ActivePage = apage}
     |Toggle result when model.collapse =result -> {model with collapse = ""}
     |Toggle result ->  {model with collapse = result}
+    |ToggleBurger -> {model with ShowBurger=not model.ShowBurger}
     | _ ->  {model with collapse=""}
 
 // VIEW (rendered with React)
@@ -169,9 +171,14 @@ let myAppBar (model:Model) dispatch =
         Mui.appBar[AppBarProp.Position AppBarPosition.Static
                    Style [BackgroundColor "#2e2e2e"]][
             Mui.toolbar[][
-                Mui.iconButton[Style[unbox("color",secondaryString)]][
-                    Fa.i[Fa.Size Fa.FaExtraSmall
-                         Fa.Solid.Bars][]
+                Mui.iconButton[
+                    Style[unbox("color",secondaryString)]
+                    OnClick (fun _ -> dispatch ToggleBurger)
+                ][
+                    Fa.i[
+                         Fa.Size Fa.FaExtraSmall
+                         Fa.Solid.Bars
+                         ][]
                 ]
                 Mui.typography[
                                 TypographyProp.Variant TypographyVariant.H6
@@ -190,7 +197,7 @@ let myAppBar (model:Model) dispatch =
                                     ClassNames.Input "inputInput"
                                   ]
                                   Placeholder "Search.."
-                                        ]
+                    ]
                 ]
             ]
         ]
