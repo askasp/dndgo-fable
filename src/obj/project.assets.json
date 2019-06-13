@@ -181,7 +181,7 @@
           "lib/netstandard2.0/Fable.React.dll": {}
         }
       },
-      "FSharp.Core/4.6.2": {
+      "FSharp.Core/4.5.2": {
         "type": "package",
         "compile": {
           "lib/netstandard1.6/FSharp.Core.dll": {}
@@ -481,17 +481,18 @@
         "lib/netstandard2.0/Fable.React.xml"
       ]
     },
-    "FSharp.Core/4.6.2": {
-      "sha512": "LKE5pmENO+YxcMI2tNEPK22SpOBtLdWjd/3pDkBC/L8cXM+We99P9kyoyY2aT85o8i7Xtt4SQJnUhMg7klm3tQ==",
+    "FSharp.Core/4.5.2": {
+      "sha512": "Pe3EDp9oBjQ3c3fvZAJsw7XFLHECS3zn3P7MSqsJy3sFYR6jvTgxxnCFeePR1JHiWyZ3bm+RZAjchqVYk61adA==",
       "type": "package",
-      "path": "fsharp.core/4.6.2",
+      "path": "fsharp.core/4.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fsharp.core.4.6.2.nupkg.sha512",
+        "fsharp.core.4.5.2.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/net45/FSharp.Core.dll",
         "lib/net45/FSharp.Core.optdata",
+        "lib/net45/FSharp.Core.resources.dll",
         "lib/net45/FSharp.Core.sigdata",
         "lib/net45/FSharp.Core.xml",
         "lib/net45/cs/FSharp.Core.resources.dll",
@@ -672,7 +673,7 @@
       ]
     },
     "Thoth.Json/3.2.0": {
-      "sha512": "uGMrOXbK0iCDikUlFi6pUs8ATDQamz4rPAAefbKe/yAmzcJ3pv5I7zmLTB5vsCTGF74qiAQkAnDY55wCEgZwWA==",
+      "sha512": "jXZFTLH8Ai610WeW3NBRsckmxiqvE3FOd7T7tEDpZQoJqwRabS+6YDIDMYMwuK5JuHrfasUEc8+r+o7I5uQDig==",
       "type": "package",
       "path": "thoth.json/3.2.0",
       "files": [
@@ -693,7 +694,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "FSharp.Core >= 4.6.2",
+      "FSharp.Core >= 4.5.2",
       "Fable.Core >= 3.0.0",
       "Fable.Elmish.Browser >= 3.0.0",
       "Fable.Elmish.React >= 3.0.1",
@@ -707,23 +708,24 @@
     ]
   },
   "packageFolders": {
-    "/home/askasp/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/akselkjetsa/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/askasp/git/dndgo-fable/src/App.fsproj",
+      "projectUniqueName": "/Users/akselkjetsa/git/dndgo-fable/src/App.fsproj",
       "projectName": "App",
-      "projectPath": "/home/askasp/git/dndgo-fable/src/App.fsproj",
-      "packagesPath": "/home/askasp/.nuget/packages/",
-      "outputPath": "/home/askasp/git/dndgo-fable/src/obj/",
+      "projectPath": "/Users/akselkjetsa/git/dndgo-fable/src/App.fsproj",
+      "packagesPath": "/Users/akselkjetsa/.nuget/packages/",
+      "outputPath": "/Users/akselkjetsa/git/dndgo-fable/src/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/askasp/.nuget/NuGet/NuGet.Config"
+        "/Users/akselkjetsa/git/dndgo-fable/NuGet.Config",
+        "/Users/akselkjetsa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -742,7 +744,7 @@
         "dependencies": {
           "FSharp.Core": {
             "target": "Package",
-            "version": "[4.6.2, )"
+            "version": "[4.5.2, )"
           },
           "Fable.Core": {
             "target": "Package",
@@ -794,5 +796,47 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Fable.Elmish.Browser 3.0.0 -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Fable.Elmish.React 3.0.1 -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Fable.React 5.2.3 -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: FSharp.Core from 4.6.2 to 4.5.2. Reference the package directly from the project to select a different version. \n App -> Thoth.Json 3.2.0 -> FSharp.Core (>= 4.6.2) \n App -> FSharp.Core (>= 4.5.2)",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

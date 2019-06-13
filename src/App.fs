@@ -30,20 +30,20 @@ open Thoth.Json
 
 //JsInterop.import("./src/dnd5eDB/5e-SRD-Races.json")
 //JsInterop.importjjh
-type Samma =
-    {jada :string}
-
-module MyIcon = Fable.MaterialUI.Icons
-let races = JsInterop.toPlainJsObj (JsInterop.import "*" "./dnd5eDB/5e-SRD-Races.json")
-printfn "hei"
-//Decode.Auto.unsafeFromString<Samma>(races)
-//System.Console.WriteLine(races?("default"))
-let a = JsInterop.toPlainJsObj races?("default")
-System.Console.WriteLine(a)
-let b = JsInterop.toPlainJsObj a?("0")
-System.Console.WriteLine(b)
-
-printfn "Value: %O" b?("name") // Access with a string reference
+//ype Samma =
+//   {jada :string}
+//
+//odule MyIcon = Fable.MaterialUI.Icons
+//et races = JsInterop.toPlainJsObj (JsInterop.import "*" "./dnd5eDB/5e-SRD-Races.json")
+//rintfn "hei"
+///Decode.Auto.unsafeFromString<Samma>(races)
+///System.Console.WriteLine(races?("default"))
+//et a = JsInterop.toPlainJsObj races?("default")
+//ystem.Console.WriteLine(a)
+//et b = JsInterop.toPlainJsObj a?("0")
+//ystem.Console.WriteLine(b)
+//
+//rintfn "Value: %O" b?("name") // Access with a string reference
 let currencies = [
     ("$", "USD")
     ("€", "EUR")
@@ -328,7 +328,6 @@ let view (model:Model) dispatch =
       [
         myAppBar model dispatch
         div[Style[unbox("padding","16px")]][
-         createCharacterPage 
          currentPageView model dispatch
         ]
 //        cardview model dispatch]
