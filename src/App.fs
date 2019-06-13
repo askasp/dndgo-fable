@@ -343,6 +343,6 @@ let view (model:Model) dispatch =
      
 // App
 Program.mkSimple init update view
-|> Program.withReact "elmish-app"
+|> Program.withReactBatched "elmish-app"
 |> Program.withConsoleTrace
 |> Program.run
